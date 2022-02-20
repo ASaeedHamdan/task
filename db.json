@@ -1,0 +1,39 @@
+{
+  "patients": [
+    {
+      "PatientName": "asd",
+      "PatientAge": 1203019722,
+      "PatientTelephone": "2222",
+      "PatientGender": "Male",
+      "id": 2
+    },
+    {
+      "PatientName": "asd",
+      "PatientAge": 33,
+      "PatientTelephone": "44444",
+      "PatientGender": "Male",
+      "id": 3
+    }
+  ],
+  "appointments": [
+    {
+      "PatientName": "ali ahmed",
+      "PatientAge": 28,
+      "PatientTelephone": "012354687",
+      "AppointmentDate": "2022-02-12T22:00:00.000Z",
+      "DetectionType": "ggg",
+      "id": 6
+    },
+    {
+      "PatientName": "ahmed",
+      "PatientAge": 20,
+      "PatientTelephone": "01203019722",
+      "AppointmentDate": "2022-02-23T22:00:00.000Z",
+      "DetectionType": "eyes",
+      "id": 8
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>add patient data</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="patientForm">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Patient Name</mat-label>
+      <input formControlName="PatientName" matInput placeholder="Placeholder">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Patient age</mat-label>
+      <input formControlName="PatientAge" type="number" matInput placeholder="Placeholder">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Patient Telephone</mat-label>
+      <input formControlName="PatientTelephone" matInput  placeholder="Placeholder">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Patient Gender</mat-label>
+     <mat-select formControlName="PatientGender" placeholder="Gender">
+    <mat-option value="Male">Male</mat-option>
+    <mat-option value="FMale">FMale</mat-option>
+     </mat-select>
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="outline">
+      <mat-label>Choose Date </mat-label>
+      <input matInput formControlName="PatientDate" [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> -->
+
+  </form>
+</div>
+ <div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button mat-raised-button color="primary" (click)="addPateint()">{{actionBtn}}</button>
+</div>

@@ -1,0 +1,91 @@
+
+<div class="container">
+  <div style="margin-top: 10px;">
+    <mat-form-field appearance="standard">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+        </ng-container>
+
+        <!-- Progress Column -->
+        <ng-container matColumnDef="PatientName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> PatientName </th>
+          <td mat-cell *matCellDef="let row"> {{row.PatientName}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="PatientAge">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> PatientAge </th>
+          <td mat-cell *matCellDef="let row" > {{row.PatientAge}} </td>
+        </ng-container>
+
+        <!-- Fruit Column -->
+        <ng-container matColumnDef="PatientTelephone">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> PatientTelephone </th>
+          <td mat-cell *matCellDef="let row"> {{row.PatientTelephone}} </td>
+        </ng-container>
+         <!-- Fruit Column -->
+         <ng-container matColumnDef="AppointmentDate">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> AppointmentDate </th>
+          <td mat-cell *matCellDef="let row"> {{row.AppointmentDate | date:"yyyy-MM-dd"}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="DetectionType">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> DetectionType </th>
+          <td mat-cell *matCellDef="let row"> {{row.DetectionType}} </td>
+        </ng-container>
+
+
+
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+          <td mat-cell *matCellDef="let row" >
+
+           <button mat-icon-button color="primary" (click)="editApoint(row)">
+             <mat-icon>edit</mat-icon>
+           </button>
+
+            <button mat-icon-button color="warn" (click)="deletePatient(row.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+
+          </td>
+        </ng-container>
+
+
+
+        <!-- <ng-container matColumnDef="Appointment">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Appointment </th>
+          <td mat-cell *matCellDef="let row"  (click)="openApoointDialog(row)">
+
+          <button mat-icon-button color="warn">
+            <mat-icon>add</mat-icon>
+          </button>
+
+          </td>
+        </ng-container> -->
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+
+  </div>
+</div>
+

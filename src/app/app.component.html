@@ -1,0 +1,42 @@
+  <!-- <todo></todo> -->
+ <!-- <material></material> -->
+<!--
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand"  routerLink="/home">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" routerLink="/home">page1</a>
+        <a class="nav-link" routerLink="/appointmentPage">page3</a>
+      </div>
+    </div>
+  </div>
+</nav> -->
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+      <a routerLink="/home" class="navbar-brand">Clinic</a>
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse2">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse2">
+          <div class="navbar-nav">
+              <a routerLink="/home" class="nav-item nav-link ">Patients</a>
+              <a routerLink="/appointmentPage" class="nav-item nav-link">Appointments</a>
+
+          </div>
+          <form class="d-flex ms-auto">
+              <input type="text" class="form-control me-sm-2" placeholder="Search">
+              <button type="submit" class="btn btn-outline-light">Search</button>
+          </form>
+      </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+

@@ -1,0 +1,43 @@
+<h1 mat-dialog-title>add patient data</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="AppointForm">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Patient Name</mat-label>
+      <input formControlName="PatientName" matInput placeholder="Placeholder">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Patient age</mat-label>
+      <input formControlName="PatientAge" type="number" matInput placeholder="Placeholder">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Patient Telephone</mat-label>
+      <input formControlName="PatientTelephone" matInput  placeholder="Placeholder">
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Choose Date </mat-label>
+      <input matInput formControlName="AppointmentDate" [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Detection Type</mat-label>
+      <input formControlName="DetectionType" matInput  placeholder="Placeholder">
+    </mat-form-field>
+
+
+  </form>
+</div>
+ <div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button mat-raised-button color="primary" (click)="addAppointment()">{{actionBtn}}</button>
+</div>
